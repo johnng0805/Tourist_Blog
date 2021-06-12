@@ -8,4 +8,4 @@ Import database file **blog.sql** và user tương tác với database **user.sq
 
 Chạy server:
 
-> npm run
+> npm start
