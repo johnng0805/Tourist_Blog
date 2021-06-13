@@ -47,7 +47,7 @@ router.put('/:id', async function(req, res) {
                 id: id
             }
         });
-        res.status(200).send(updateUser);
+        res.status(200).send({ email, name, password });
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
