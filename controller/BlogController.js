@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', async function(req, res) {
     try {
         const Blog = await BlogModel.findAll();
-        res.sendStatus(200).send(Blog);
+        res.status(200).send(Blog);
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
@@ -23,7 +23,7 @@ router.get('/:id', async function(req, res) {
                 user_id: userID
             }
         });
-        res.sendStatus(200).send(personalBlog);
+        res.status(200).send(personalBlog);
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
@@ -38,7 +38,7 @@ router.post('/', async function(req, res) {
             content: content,
             user_id: userID 
         });
-        res.sendStatus(200).send(newBlog);
+        res.status(200).send(newBlog);
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
@@ -59,6 +59,7 @@ router.put('/:id', async function(req, res) {
                 id: id
             }
         });
+        res.status(200).send({ id, title, content });
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
@@ -73,7 +74,7 @@ router.delete('/:id', async function(req, res) {
                 id: id
             }
         });
-        res.sendStatus(200)
+        res.sendStatus(200);
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
