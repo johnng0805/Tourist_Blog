@@ -12,8 +12,8 @@ app.use(express.json());
 
 app.use(session({
     secret: 'cat',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie: { maxAge: 30 * 1000 * 60 }
 }));
 
