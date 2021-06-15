@@ -1,7 +1,6 @@
 const express = require('express');
 const BlogModel = require('../model/BlogModel');
 const { body, validationResult } = require('express-validator');
-const { empty } = require('uuidv4');
 
 const router = express.Router();
 
