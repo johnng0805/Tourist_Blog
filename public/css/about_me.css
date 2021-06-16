@@ -1,0 +1,59 @@
+body, html {
+    background-color: #E8E3D2;
+    height: 100%;
+}
+
+.hero_image {
+    background-color: orange;
+    background-position: center;
+    background-size: cover;
+    min-height: 18em;
+    width: 100%;
+}
+
+#profilePhoto {
+    background-color: white;
+    border-radius: 50%;
+    min-width: 12em;
+    min-height: 12em;
+    box-shadow: 2px 2px 10px lightgray;
+}
+
+.info-box-container {
+    margin-top: 6em;
+    /*width: 38em;*/
+    max-width: 45em;
+}
+
+.info-box {
+    margin-top: 1em;
+    padding: 2em 4em;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 10px lightgray;
+}
+
+.form > * {
+    font-size: larger;
+}
+
+.form > label {
+    font-weight: bold;
+    margin: 20px 10px 12px 0;
+}
+
+.form > input {
+    border: 0;
+}
+
+select {
+    border: 0;
+}
+
+#backBtn {
+    background-color: brown;
+    width: 10em;
+    font-size: larger;
+    margin-top: 1em;
+    box-shadow: 2px 2px 10px lightgray;
+}
