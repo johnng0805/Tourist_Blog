@@ -13,7 +13,7 @@ const checkLogin = (req, res, next) => {
     }
 }
 
-router.get('/', async function(req, res) {
+router.get('/', checkLogin, async function(req, res) {
     try {
         const Blog = await BlogModel.findAll();
         res.status(200).send(Blog);
@@ -25,7 +25,7 @@ router.get('/', async function(req, res) {
     }
 });
 
-router.get('/:id', async function(req, res) {
+router.get('/:id', checkLogin, async function(req, res) {
     const userID = req.params.id;
     try {
         const personalBlog = await BlogModel.findAll({

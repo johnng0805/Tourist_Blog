@@ -17,15 +17,19 @@ const checkLogin = (req, res, next) => {
 
 router.post('/register', 
     body('email').isEmail().normalizeEmail(),
-    body('name').notEmpty().isAlphanumeric(),
+    body('last_name').notEmpty().isAlphanumeric(),
+    body('first_name').notEmpty().isAlphanumeric(),
     body('gender').notEmpty().isAlphanumeric(),
+    body('birthday').notEmpty(),
+    body('age').notEmpty().isAlphanumeric(),
+    body('phone').notEmpty().isAlphanumeric(),
     body('password').notEmpty().isAlphanumeric(),
     async function(req, res) {
         const err = validationResult(req);
         if (!err.isEmpty()) {
             return res.sendStatus(400);
         }
-        const { email, name, gender, password } = req.body;
+        const { email, last_name, first_name, gender, birthday, age, phone, password } = req.body;
         console.log(req.body);
         try {
             const hashedPass = bcrypt.hashSync(password, saltRounds);
@@ -35,7 +39,11 @@ router.post('/register',
                 },
                 defaults: {
                     email: email,
-                    name: name,
+                    last_name: last_name,
+                    first_name: first_name,
+                    birthday: birthday,
+                    age: age,
+                    phone: phone,
                     gender: gender,
                     password: hashedPass
                 }
@@ -54,7 +62,12 @@ router.post('/register',
 
 router.put('/:id', checkLogin, 
     body('email').isEmail().normalizeEmail(),
-    body('name').notEmpty().isAlphanumeric(),
+    body('last_name').notEmpty().isAlphanumeric(),
+    body('first_name').notEmpty().isAlphanumeric(),
+    body('gender').notEmpty().isAlphanumeric(),
+    body('birthday').notEmpty(),
+    body('age').notEmpty().isAlphanumeric(),
+    body('phone').notEmpty().isAlphanumeric(),
     body('password').notEmpty().isAlphanumeric(),
     async function(req, res) {
         const err = validationResult(req);
@@ -62,19 +75,24 @@ router.put('/:id', checkLogin,
             return res.sendStatus(400);
         }
         const id = req.params.id;
-        const { email, name, password } = req.body;
+        const { email, last_name, first_name, gender, birthday, age, phone, password } = req.body;
         const hashedPass = bcrypt.hashSync(password, saltRounds);
         try {
             const updateUser = await UserModel.update({
                 email: email,
-                name: name,
+                last_name: last_name,
+                first_name: first_name,
+                birthday: birthday,
+                age: age,
+                phone: phone,
+                gender: gender,
                 password: hashedPass
             }, {
                 where: {
                     id: id
                 }
             });
-            res.status(200).send({ email, name });
+            res.status(200).send({ email, last_name, first_name, gender, birthday, age, phone });
         } catch(err) {
             console.log(err);
             res.sendStatus(500);
@@ -118,7 +136,12 @@ router.post('/login',
                     req.session.User = {
                         userID: userInfo.id,
                         userEmail: userInfo.email,
-                        userName: userInfo.name
+                        userLast_Name: userInfo.last_name,
+                        userFirst_Name: userInfo.first_name,
+                        userGender: userInfo.gender,
+                        userBirthday: userInfo.birthday,
+                        userPhone: userInfo.Phone,
+                        userAge: userInfo.age
                     };
                     res.sendStatus(200);
                 } else {

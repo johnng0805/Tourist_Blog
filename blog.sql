@@ -1,8 +1,12 @@
 create table `users` (
     `id` binary(36) primary key not null,
     `email` varchar(255) not null,
-    `name` varchar(255) not null,
+    `first_name` varchar(255) not null,
+    `last_name` varchar(255) not null,
     `gender` enum('male', 'female', 'other'),
+    `birthday` dateime not null,
+    `age` tinyint not null,
+    `phone` varchar(255) not null,
     `password` varchar(255) not null
 );
 create table `blogs` (
