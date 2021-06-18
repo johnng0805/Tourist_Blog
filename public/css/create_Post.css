@@ -3,6 +3,9 @@
     margin:0;
     box-sizing: border-box;
 }
+body {
+    background-color: #E8E3D2;
+}
 .header img
 {
     width: 100%;
@@ -25,10 +28,12 @@
 }
 .main_form
 {
-    width: 800px;
-    height:420px;
+    /*width: 800px;
+    height:420px;*/
     border-radius: 15px;
     border:solid #b2bec3 0.2px;
+    /*box-shadow: 1px 1px 4px gray;*/
+    background-color: white;
 }
 #main_form
 {
@@ -69,4 +74,6 @@
 .form-group textarea
 {
     border:solid #b2bec3 0.2px;
+    padding: 10px;
+    width: 100%;
 }

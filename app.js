@@ -1,14 +1,17 @@
 const express = require('express');
 const session = require('express-session');
+const multer = require('multer');
 const dotenv = require('dotenv');
 const UserController = require('./controller/UserController');
 const BlogController = require('./controller/BlogController');
 const path = require('path');
+var bodyParser = require('body-parser');
 
 dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(bodyParser.json());
 
 app.use(session({
     secret: 'cat',
@@ -27,7 +30,7 @@ const checkLogin = (req, res, next) => {
     } else {
         res.sendFile('./view/login.html', {root: __dirname});
     }
-}
+};
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
@@ -37,7 +40,11 @@ app.get('/register', async function(req, res) {
 
 app.get('/', checkLogin, async function(req, res) {
     res.sendFile('./view/index.html', {root: __dirname});
-})
+});
+
+app.get('/createBlog', checkLogin, async function(req, res) {
+    res.sendFile("./view/create_Post.html", {root: __dirname});
+});
 
 app.use('/user', UserController);
 

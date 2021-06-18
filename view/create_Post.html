@@ -19,7 +19,7 @@
     <div class="header">
         <img src="/static/images/slider_1.jpg" alt="">
     </div>
-    <div class="container">
+    <div class="container col-lg-8 mb-4">
         <div class="row mt-3">
             <div class="col-12">
                 <div class="Picture">
@@ -35,18 +35,19 @@
                 <h3>Create Post</h3>
             </div>
         </div>
-        <div class="row main_form mt-2">
-            <form id="main_form">
+        <div class="main_form mt-2 p-3">
+            <form id="main_form" enctype="multipart/form-data" method="POST" action="http://localhost:3000/blog">
                 <div class="form-group">
-                    <button type="submit" class="">Choose Image</button>
+                    <label style="font-size: 17px; font-weight: bold;">Image</label>
+                    <input type="file" name="blogImage" class="">
                 </div>
                 <div class="form-group">
-                  <label style="font-size: 17px; font-weight: bold;">Tittle:</label>
-                  <input style="outline: none;" type="text" class="form-control"   placeholder="Write here...."> 
+                  <label style="font-size: 17px; font-weight: bold;">Title:</label>
+                  <input style="outline: none;" type="text" name="title" id="title" class="form-control"  placeholder="Write here...." required> 
                 </div>
                 <div class="form-group">
                     <label style="font-size: 17px; font-weight: bold;">Content:</label> <br>
-                    <textarea name="" id="" cols="100" rows="6" placeholder="Write here...."></textarea>
+                    <textarea name="content" id="blogContent" rows="10" placeholder="Write here...." required></textarea>
                   </div>
                 <div class="button_Create">
                     <button type="submit">Post</button>

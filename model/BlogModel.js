@@ -25,6 +25,10 @@ const Post = db.define('Blog', {
     date: {
         type: DataTypes.DATE,
         defaultValue: Sequelize.NOW
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     tableName: 'blogs'

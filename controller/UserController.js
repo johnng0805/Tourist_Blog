@@ -131,7 +131,7 @@ router.post('/login',
                 if (bcrypt.compareSync(password, userInfo.password)) {
                     req.session.loggedIn = true;
                     req.session.User = {
-                        userID: userInfo.id,
+                        userID: userInfo.id.toString(),
                         userEmail: userInfo.email,
                         userLast_Name: userInfo.last_name,
                         userFirst_Name: userInfo.first_name,

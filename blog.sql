@@ -14,5 +14,6 @@ create table `blogs` (
     `content` longtext not null,
     `user_id` binary(36) not null,
     `date` datetime,
+    `image` mediumtext,
     foreign key (`user_id`) references `users`(`id`)
 );

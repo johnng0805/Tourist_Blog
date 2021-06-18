@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const BlogModel = require('../model/BlogModel');
 const { body, validationResult } = require('express-validator');
 
@@ -11,6 +13,17 @@ const checkLogin = (req, res, next) => {
         res.sendStatus(403);
     }
 }
+
+const storage = multer.diskStorage({
+    destination: './public/images/',
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({
+    storage: storage
+}).single('blogImage');
 
 router.get('/', checkLogin, async function(req, res) {
     try {
@@ -40,28 +53,31 @@ router.get('/:id', checkLogin, async function(req, res) {
 });
 
 router.post('/', checkLogin, 
-    body('title').notEmpty(),
-    body('content').notEmpty(),
-    body('userID').notEmpty(),
+    //body('title').notEmpty(),
+    //body('content').notEmpty(),
+    upload,
     async function(req, res) {
-        const err = validationResult(req);
+        /*const err = validationResult(req);
         if (!err.isEmpty()) {
             return res.sendStatus(400);
-        }
-        const { title, content, userID } = req.body;
+        }*/
         try {
             const newBlog = await BlogModel.create({
-                title: title,
-                content: content,
-                user_id: userID 
+                title: req.body.title,
+                content: req.body.content,
+                user_id: req.session.User.userID.toString(),
+                image: req.file.filename
             });
-            res.status(200).send(newBlog);
+            console.log(newBlog);
+            if (newBlog) {
+                res.status(200).send(newBlog);
+            } else {
+                res.sendStatus(400);
+            }
         } catch(err) {
             console.log(err);
             res.sendStatus(500);
-        } finally {
-            console.log('Blog posted');
-        }
+        }   
     }
 );
 
