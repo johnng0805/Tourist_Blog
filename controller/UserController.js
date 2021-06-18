@@ -21,7 +21,6 @@ router.post('/register',
     body('first_name').notEmpty().isAlphanumeric(),
     body('gender').notEmpty().isAlphanumeric(),
     body('birthday').notEmpty(),
-    body('age').notEmpty().isAlphanumeric(),
     body('phone').notEmpty().isAlphanumeric(),
     body('password').notEmpty().isAlphanumeric(),
     async function(req, res) {
@@ -29,7 +28,7 @@ router.post('/register',
         if (!err.isEmpty()) {
             return res.sendStatus(400);
         }
-        const { email, last_name, first_name, gender, birthday, age, phone, password } = req.body;
+        const { email, last_name, first_name, gender, birthday, phone, password } = req.body;
         console.log(req.body);
         try {
             const hashedPass = bcrypt.hashSync(password, saltRounds);
@@ -42,16 +41,15 @@ router.post('/register',
                     last_name: last_name,
                     first_name: first_name,
                     birthday: birthday,
-                    age: age,
                     phone: phone,
                     gender: gender,
                     password: hashedPass
                 }
             });
             if (!created) {
-                res.status(200).send({status: false});
+                res.sendStatus(409);
             } else {
-                res.status(200).send(user);
+                res.sendStatus(200);
             }
         } catch(err) {
             console.log(err);
@@ -83,7 +81,6 @@ router.put('/:id', checkLogin,
                 last_name: last_name,
                 first_name: first_name,
                 birthday: birthday,
-                age: age,
                 phone: phone,
                 gender: gender,
                 password: hashedPass
@@ -141,7 +138,6 @@ router.post('/login',
                         userGender: userInfo.gender,
                         userBirthday: userInfo.birthday,
                         userPhone: userInfo.Phone,
-                        userAge: userInfo.age
                     };
                     res.sendStatus(200);
                 } else {

@@ -5,7 +5,6 @@ create table `users` (
     `last_name` varchar(255) not null,
     `gender` enum('male', 'female', 'other'),
     `birthday` dateime not null,
-    `age` tinyint not null,
     `phone` varchar(255) not null,
     `password` varchar(255) not null
 );
