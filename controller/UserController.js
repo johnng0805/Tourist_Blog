@@ -141,10 +141,10 @@ router.post('/login',
                     };
                     res.sendStatus(200);
                 } else {
-                    res.status(200).send({status: false});
+                    res.sendStatus(401);
                 }
             } else {
-                res.status(200).send({status: false});
+                res.sendStatus(401);
             }
         } catch(err) {
             console.log(err);
