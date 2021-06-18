@@ -513,7 +513,16 @@ input {
   padding: 57px 65px;
   padding-bottom: 65px;
 }
-
+.link_Signin
+{
+  margin-top: 10px;
+}
+.link_Signin p
+{
+  font-size: 16px;
+  color: #555;
+  text-transform: capitalize;
+}
 @media (max-width: 767px) {
   .card-4 .card-body {
     padding: 50px 40px;
