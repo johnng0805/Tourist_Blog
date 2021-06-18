@@ -75,7 +75,7 @@ router.put('/:id', checkLogin,
             return res.sendStatus(400);
         }
         const id = req.params.id;
-        const { email, last_name, first_name, gender, birthday, age, phone, password } = req.body;
+        const { email, last_name, first_name, gender, birthday, phone, password } = req.body;
         const hashedPass = bcrypt.hashSync(password, saltRounds);
         try {
             const updateUser = await UserModel.update({
