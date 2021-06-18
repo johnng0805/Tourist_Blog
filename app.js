@@ -21,6 +21,24 @@ app.listen(process.env.PORT, function() {
     console.log('Starting blog server at port: ' + process.env.PORT);
 })
 
+const checkLogin = (req, res, next) => {
+    if (req.session.loggedIn) {
+        next();
+    } else {
+        res.sendFile('./view/login.html', {root: __dirname});
+    }
+}
+
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+app.get('/register', async function(req, res) {
+    res.sendFile('./view/register.html', {root: __dirname});
+});
+
+app.get('/', checkLogin, async function(req, res) {
+    res.sendFile('./view/index.html', {root: __dirname});
+})
+
 app.use('/user', UserController);
 
 app.use('/blog', BlogController);

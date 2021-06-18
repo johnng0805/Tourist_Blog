@@ -28,10 +28,6 @@ const User = db.define('User', {
         type: DataTypes.DATE,
         allowNull: false
     },
-    age: {
-        type: DataTypes.TINYINT,
-        allowNull: false
-    },
     phone: {
         type: DataTypes.STRING,
         allowNull: false
