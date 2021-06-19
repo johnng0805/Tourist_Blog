@@ -12,7 +12,7 @@ $(function() {
             encode: true,
             success: function(data) {
                 console.log(data);
-                location.href = "/";
+                location.reload();
             },
             error: function(jqXHR, exception) {
                 console.log(jqXHR);

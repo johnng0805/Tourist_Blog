@@ -22,8 +22,27 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-    storage: storage
+    storage: storage,
+    //limits: { fileSize: 1000000 },
+    fileFilter: function(req, file, cb) {
+        checkFileType(file, cb);
+    }
 }).single('blogImage');
+
+function checkFileType(file, cb) {
+    // Allowed ext
+    const fileTypes = /jpeg|jpg|png/;
+    // Check ext
+    const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
+    // Check mime
+    const mimeType = fileTypes.test(file.mimetype);
+
+    if (mimeType && extName) {
+        return cb(null, true);
+    } else {
+        cb('Error: Images only');
+    }
+}  
 
 router.get('/', checkLogin, async function(req, res) {
     try {
@@ -57,16 +76,23 @@ router.post('/', checkLogin,
     //body('content').notEmpty(),
     upload,
     async function(req, res) {
-        /*const err = validationResult(req);
-        if (!err.isEmpty()) {
+        const err = validationResult(req);
+        /*if (!err.isEmpty()) {
             return res.sendStatus(400);
         }*/
         try {
+            const { title, content } = req.body;
+            var filename;
+            if (req.file) {
+                filename = req.file.filename;
+            } else {
+                filename = null;
+            }
             const newBlog = await BlogModel.create({
-                title: req.body.title,
-                content: req.body.content,
+                title: title,
+                content: content,
                 user_id: req.session.User.userID.toString(),
-                image: req.file.filename
+                image: filename
             });
             console.log(newBlog);
             if (newBlog) {
