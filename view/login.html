@@ -29,9 +29,16 @@
 						<form class="signin-form">
 							<div class="form-group">
 								<input type="email" class="form-control" placeholder="Email" id="email-field" required>
+								<h5 id="usercheck" style="color:white; font-size: 14px;" >
+									*Please enter username !
+								</h5>
 							</div>
+							
 							<div class="form-group">
 								<input id="password-field" type="password" class="form-control" placeholder="Password" required>
+								<h5 id="passcheck" style="color:white; font-size: 14px;" >
+									*Please enter password !
+								</h5>
 								<span toggle="#password-field"
 									class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
@@ -72,8 +79,11 @@
 	<script src="/static/js/popper.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/static/js/main.js"></script>
+	<!--validate login-->
+	<script src="/static/js/login_validate.js"> </script>
 	<!--Login.js-->
 	<script src="/static/js/login.js"></script>
+	
 </body>
 
 </html>
