@@ -15,7 +15,7 @@ const checkLogin = (req, res, next) => {
 }
 
 const storage = multer.diskStorage({
-    destination: './public/images/',
+    destination: './public/images/uploads/',
     filename: function(req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }

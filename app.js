@@ -46,6 +46,10 @@ app.get('/createBlog', checkLogin, async function(req, res) {
     res.sendFile("./view/create_Post.html", {root: __dirname});
 });
 
+app.get('/about_me', checkLogin, async function(req, res) {
+    res.sendFile('./view/about_me.html', {root: __dirname});
+});
+
 app.use('/user', UserController);
 
 app.use('/blog', BlogController);
