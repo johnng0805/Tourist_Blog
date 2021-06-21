@@ -50,6 +50,10 @@ app.get('/about_me', checkLogin, async function(req, res) {
     res.sendFile('./view/about_me.html', {root: __dirname});
 });
 
+app.get('/my_photos', checkLogin, async function(req, res) {
+    res.sendFile('./view/timeline-photos.html', {root: __dirname});
+});
+
 app.use('/user', UserController);
 
 app.use('/blog', BlogController);

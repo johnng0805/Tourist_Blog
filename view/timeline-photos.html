@@ -9,10 +9,10 @@
 	<title>Travel Blog</title>
     <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
     
-    <link rel="stylesheet" href="../public/css/main.min.css">
-    <link rel="stylesheet" href="../public/css/style1.css">
-    <link rel="stylesheet" href="../public/css/color.css">
-    <link rel="stylesheet" href="../public/css/responsive.css">
+    <link rel="stylesheet" href="/static/css/main.min.css">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <link rel="stylesheet" href="/static/css/color.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
 
 </head>
 <body>
@@ -22,14 +22,14 @@
 	<div class="responsive-header">
 		<div class="mh-head first Sticky">
 			<span class="mh-text">
-				<a href="newsfeed.html" title=""><img src="../public/images/logoblog.png" alt=""></a>
+				<a href="newsfeed.html" title=""><img src="/static/images/logoblog.png" alt=""></a>
 			</span>
 		</div>
 	</div><!-- responsive header -->
 	
 	<div class="topbar stick">
 		<div class="logo">
-			<a title="" href="newsfeed.html"><img src="../public/images/logoblog.png" alt=""></a>
+			<a title="" href="newsfeed.html"><img src="/static/images/logoblog.png" alt=""></a>
 		</div>
 		
 		<div class="top-area">
@@ -42,7 +42,7 @@
 				</li>
 			</ul>
 			<div class="user-img">
-				<img src="../public/images/resources/admin.jpg" alt="">
+				<img src="/static/images/resources/admin.jpg" alt="">
 				<span class="status f-online"></span>
 				<div class="user-setting">
 					<a href="#" title=""><i class="ti-user"></i> view profile</a>
@@ -56,7 +56,7 @@
 
     <section>
 		<div class="feature-photo">
-			<figure><img src="../public/images/resources/slider_1 1.png" alt=""></figure>
+			<figure><img src="/static/images/resources/slider_1 1.png" alt=""></figure>
 		</div>
 	</section><!-- top area -->
 		
@@ -104,42 +104,12 @@
 								</aside>
 							</div><!-- sidebar -->
 							<div class="col-lg-9">
-									<div class="central-meta">
-										<ul class="photos">
-	
-											<li>
-												<img src="../public/images/resources/pexels-photo-1309644 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-4825701 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-2549018 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-2792025 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-2925146 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-3889660 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-1908647 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-2405095 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-1020016 1.png" alt="">
-											</li>
-											<li>
-												<img src="../public/images/resources/pexels-photo-912050 1.png" alt="">
-											</li>
-										</ul>
-										<div class="lodmore"><button class="btn-view btn-load-more"></button></div>
-									</div><!-- photos -->
+								<div class="central-meta">
+									<ul class="photos" id="photoList">
+									</ul>
+								</div>
+							</div>
+						</div><!-- photos -->
 					</div>
 				</div>
 			</div>
@@ -153,7 +123,7 @@
 					<div class="widget">
 						<div class="foot-logo">
 							<div class="logo">
-								<a href="index-2.html" title=""><img src="../public/images/logoblog.png" alt=""></a>
+								<a href="index-2.html" title=""><img src="/static/images/logoblog.png" alt=""></a>
 							</div>	
 							<p>
 								Blog bé xinh cung cấp thông tin cho các bạn yêu du lịch
@@ -209,10 +179,12 @@
 	
 </div>
 	
-	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.min.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/map-init.js"></script>
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/static/js/main.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/map-init.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+	<!--My Photo js-->
+	<script src="/static/js/my_photos.js"></script>
 
 </body>	
 

@@ -56,8 +56,9 @@ router.get('/', checkLogin, async function(req, res) {
     }
 });
 
-router.get('/:id', checkLogin, async function(req, res) {
-    const userID = req.params.id;
+router.get('/personalBlog', checkLogin, async function(req, res) {
+    //const userID = req.params.id;
+    const userID = req.session.User.userID.toString();
     try {
         const personalBlog = await BlogModel.findAll({
             where: {
