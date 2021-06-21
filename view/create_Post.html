@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
     <!-- Main CSS-->
+    <link rel="stylesheet" href="/static/css/main.min.css">
+    <link href="/static/css/style1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="/static/css/color.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
     <link href="/static/css/create_Post.css" rel="stylesheet" media="all">
 </head>
 
@@ -19,41 +23,76 @@
     <div class="header">
         <img src="/static/images/slider_1.jpg" alt="">
     </div>
-    <div class="container col-lg-8 mb-4">
-        <div class="row mt-3">
-            <div class="col-12">
-                <div class="Picture">
-                    <img src="/static/images/circle-cropped.png" alt="Ảnh đại diện">
+    <div class="row">
+        <div class="col-lg-3 mt-5">
+            <aside class="sidebar static">
+                <div class="widget">
+                    <h4 class="widget-title">Shortcuts</h4>
+                    <ul class="naves">
+                        <li>
+                            <i class="ti-clipboard"></i>
+                            <a href="http://localhost:3000" title="">Home</a>
+                        </li>
+                        <li>
+                            <i class="ti-clipboard"></i>
+                            <a href="http://localhost:3000/about_me" title="">About me</a>
+                        </li>
+                        <li>
+                            <i class="ti-mouse-alt"></i>
+                            <a href="#" title="">Your Posts</a>
+                        </li>
+                        <li>
+                            <i class="ti-files"></i>
+                            <a href="http://localhost:3000/createBlog" title="">Create Post</a>
+                        </li>
+                        <li>
+                            <i class="ti-image"></i>
+                            <a href="http://localhost:3000/my_photos" title="">Images</a>
+                        </li>
+                        <li>
+                            <i class="ti-power-off"></i>
+                            <a href="landing.html" title="">Logout</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-12 mt-2 welcome">
-                <h4>Welcome Claura !</h4>
-            </div>
+            </aside>
         </div>
-        <div class="row mt-2">
-            <div class="col-12 title">
-                <h3>Create Post</h3>
+        <div class="container col-lg-8 mb-4">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="Picture">
+                        <img src="/static/images/circle-cropped.png" alt="Ảnh đại diện">
+                    </div>
+                </div>
+                <div class="col-12 mt-2 welcome">
+                    <h4>Welcome Claura !</h4>
+                </div>
             </div>
-        </div>
-        <div class="main_form mt-2 p-3">
-            <form id="main_form" enctype="multipart/form-data" method="POST" action="http://localhost:3000/blog">
-                <div class="form-group">
-                    <label style="font-size: 17px; font-weight: bold;">Image</label>
-                    <input type="file" name="blogImage" class="">
+            <div class="row mt-2">
+                <div class="col-12 title">
+                    <h3>Create Post</h3>
                 </div>
-                <div class="form-group">
-                  <label style="font-size: 17px; font-weight: bold;">Title:</label>
-                  <input style="outline: none;" type="text" name="title" id="title" class="form-control"  placeholder="Write here...." required> 
-                </div>
-                <div class="form-group">
-                    <label style="font-size: 17px; font-weight: bold;">Content:</label> <br>
-                    <textarea name="content" id="blogContent" rows="10" placeholder="Write here...." required></textarea>
-                  </div>
-                <div class="button_Create">
-                    <button type="submit">Post</button>
-                </div>
-                
-              </form>
+            </div>
+            <div class="main_form mt-2 p-3">
+                <form id="main_form" enctype="multipart/form-data" method="POST" action="http://localhost:3000/blog">
+                    <div class="form-group">
+                        <label style="font-size: 17px; font-weight: bold;">Image</label>
+                        <input type="file" name="blogImage" class="">
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 17px; font-weight: bold;">Title:</label>
+                      <input style="outline: none;" type="text" name="title" id="title" class="form-control"  placeholder="Write here...." required> 
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 17px; font-weight: bold;">Content:</label> <br>
+                        <textarea name="content" id="blogContent" rows="10" placeholder="Write here...." required></textarea>
+                      </div>
+                    <div class="button_Create">
+                        <button type="submit">Post</button>
+                    </div>
+                    
+                  </form>
+            </div>
         </div>
     </div>
 

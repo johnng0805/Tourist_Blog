@@ -45,12 +45,6 @@ html {
   object-fit: cover;
 }
 
-.info-box-container {
-  margin-top: 6em;
-  /*width: 38em;*/
-  max-width: 45em;
-}
-
 .info-box {
   margin-top: 1em;
   padding: 2em 4em;

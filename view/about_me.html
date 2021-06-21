@@ -4,73 +4,114 @@
             <meta charset="UTF-8">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/static/css/main.min.css">
+            <link rel="stylesheet" href="/static/css/style1.css">
+            <link rel="stylesheet" href="/static/css/color.css">
+            <link rel="stylesheet" href="/static/css/responsive.css">
             <link rel="stylesheet" href="/static/css/about_me.css">
         </head>
         <body>
             <div class="page-container pb-3">
                 <div class="hero_image position-relative">
                     <img src="/static/images/slider_1.jpg">
-                    <div id="profilePhotoBorder" class="position-absolute top-100 start-50 translate-middle">
-                        <div id="profilePhoto">
-                            <img src="/static/images/bg.jpg" id="image">
-                        </div>
-                    </div>
                 </div>
-                <div class="info-box-container col-md-7 mx-auto px-4 pb-3">
-                    <h1 id="usernameTitle" class="text-center">Name Title</h1>
-                    <div class="info-box">
-                        <form class="form" id="userInfoForm" enctype="multipart/form-data" action="http://localhost:3000/user/userInfo">
-                            <div class="form-group row pb-1">
-                                <label for="first_name" class="col-sm-4 col-form-label">First name:</label>
-                                <div class="col">
-                                    <input type="text" id="first_name" class="form-control-plaintext px-1" placeholder="first name" name="first_name" required>
+                <div class="row">
+                    <div class="col-lg-3 mt-5">
+                        <aside class="sidebar static">
+                            <div class="widget">
+                                <h4 class="widget-title">Shortcuts</h4>
+                                <ul class="naves">
+                                    <li>
+                                        <i class="ti-clipboard"></i>
+                                        <a href="http://localhost:3000" title="">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-clipboard"></i>
+                                        <a href="http://localhost:3000/about_me" title="">About me</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-mouse-alt"></i>
+                                        <a href="#" title="">Your Posts</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-files"></i>
+                                        <a href="http://localhost:3000/createBlog" title="">Create Post</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-image"></i>
+                                        <a href="http://localhost:3000/my_photos" title="">Images</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-power-off"></i>
+                                        <a href="landing.html" title="">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="info-box-container col-lg-5 row mx-auto px-3 pb-3 mt-5">
+                        <div class="d-flex justify-content-center">
+                            <div id="profilePhotoBorder" class="">
+                                <div id="profilePhoto">
+                                    <img src="/static/images/bg.jpg" id="image">
                                 </div>
                             </div>
-                            <div class="form-group row pb-1">
-                                <label for="last_name" class="col-sm-4 col-form-label">Last name:</label>
-                                <div class="col">
-                                    <input type="text" id="last_name" class="form-control-plaintext px-1" placeholder="last name" name="last_name" required>
+                        </div>
+                        <h1 id="usernameTitle" class="text-center">Name Title</h1>
+                        <div class="info-box">
+                            <form class="form" id="userInfoForm" enctype="multipart/form-data" action="http://localhost:3000/user/userInfo">
+                                <div class="form-group row pb-1">
+                                    <label for="first_name" class="col-sm-4 col-form-label">First name:</label>
+                                    <div class="col">
+                                        <input type="text" id="first_name" class="form-control-plaintext px-1" placeholder="first name" name="first_name" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row pb-1">
-                                <label for="email" class="col-sm-4 col-form-label">Email:</label>
-                                <div class="col">
-                                    <input type="email" id="email" class="form-control-plaintext px-1" placeholder="email@mail.com" name="email" required>
+                                <div class="form-group row pb-1">
+                                    <label for="last_name" class="col-sm-4 col-form-label">Last name:</label>
+                                    <div class="col">
+                                        <input type="text" id="last_name" class="form-control-plaintext px-1" placeholder="last name" name="last_name" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row pb-1">
-                                <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
-                                <div class="col">
-                                    <input type="date" id="birthday" class="form-control-plaintext px-1" placeholder="dd/MM/yyyy" name="birthday" required>
+                                <div class="form-group row pb-1">
+                                    <label for="email" class="col-sm-4 col-form-label">Email:</label>
+                                    <div class="col">
+                                        <input type="email" id="email" class="form-control-plaintext px-1" placeholder="email@mail.com" name="email" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row pb-1">
-                                <label for="phone" class="col-sm-4 col-form-label">Phone:</label>
-                                <div class="col">
-                                    <input type="tel" id="phone" class="form-control-plaintext px-1" placeholder="123456" name="phone" required>
+                                <div class="form-group row pb-1">
+                                    <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
+                                    <div class="col">
+                                        <input type="date" id="birthday" class="form-control-plaintext px-1" placeholder="dd/MM/yyyy" name="birthday" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row pb-1">
-                                <label for="gender" class="col-sm-4 col-form-label">Gender:</label>
-                                <div class="col">
-                                    <select class="form-control-plaintex h-100" id="gender" name="gender">
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
-                                    </select>
+                                <div class="form-group row pb-1">
+                                    <label for="phone" class="col-sm-4 col-form-label">Phone:</label>
+                                    <div class="col">
+                                        <input type="tel" id="phone" class="form-control-plaintext px-1" placeholder="123456" name="phone" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row pb-1">
-                                <label for="image" class="col-sm-4 col-form-label">Profile photo:</label>
-                                <div class="col">
-                                    <input type="file" id="image" class="form-control px-1 border-0" name="image">
+                                <div class="form-group row pb-1">
+                                    <label for="gender" class="col-sm-4 col-form-label">Gender:</label>
+                                    <div class="col">
+                                        <select class="form-control-plaintex h-100" id="gender" name="gender">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="http://localhost:3000" id="backBtn" class="btn btn-primary">Back</a>
-                                <button type="submit" id="updateBtn" class="btn btn-primary" name="updateBtn">Update</button>
-                            </div>
-                        </form>
+                                <div class="form-group row pb-1">
+                                    <label for="image" class="col-sm-4 col-form-label">Profile photo:</label>
+                                    <div class="col">
+                                        <input type="file" id="image" class="form-control px-1 border-0" name="image">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="http://localhost:3000" id="backBtn" class="btn btn-primary">Back</a>
+                                    <button type="submit" id="updateBtn" class="btn btn-primary" name="updateBtn">Update</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

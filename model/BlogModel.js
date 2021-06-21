@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const db = require('./db');
 
-const Post = db.define('Blog', {
+const Blog = db.define('Blog', {
     id: {
         primaryKey: true,
         type: DataTypes.UUID,
@@ -34,4 +34,4 @@ const Post = db.define('Blog', {
     tableName: 'blogs'
 })
 
-module.exports = Post;
+module.exports = Blog;

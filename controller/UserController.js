@@ -148,6 +148,22 @@ router.get('/userInfo', checkLogin, async function(req, res) {
     }
 });
 
+router.get('/:id', checkLogin, async function(req, res) {
+    const id = req.params.id;
+    try {
+        const userInfo = await UserModel.findOne({
+            where: {
+                id: id
+            },
+            attributes: ['id', 'last_name', 'first_name', 'birthday', 'email', 'gender', 'image']
+        });
+        res.status(200).send(userInfo);
+    } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+});
+
 router.post('/login', 
     body('email').isEmail().normalizeEmail(),
     body('password').notEmpty().isAlphanumeric(),
@@ -189,6 +205,11 @@ router.post('/login',
         }
     }
 )
+
+router.post('/logout', (req, res) => {
+    req.session.destroy();
+    res.sendStatus(200);
+})
 
 
 module.exports = router;

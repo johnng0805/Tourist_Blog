@@ -3,6 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const BlogModel = require('../model/BlogModel');
 const { body, validationResult } = require('express-validator');
+const User = require('../model/UserModel');
 
 const router = express.Router();
 
@@ -45,8 +46,10 @@ function checkFileType(file, cb) {
 }  
 
 router.get('/', checkLogin, async function(req, res) {
+    console.log(req.session.User.userID);
     try {
-        const Blog = await BlogModel.findAll();
+        var Blog = await BlogModel.findAll();
+        console.log(Blog);
         res.status(200).send(Blog);
     } catch(err) {
         console.log(err);

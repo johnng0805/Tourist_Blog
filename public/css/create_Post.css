@@ -1,79 +1,69 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 body {
-    background-color: #E8E3D2;
+  background-color: #f4f2f2;
 }
-.header img
-{
-    width: 100%;
-    height: 50vh; 
+.header img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
 }
-.Picture img
-{
-    width: 50px;
-    height: 50px;
+.Picture img {
+  width: 50px;
+  height: 50px;
 }
-.welcome h4
-{
-    font-size: 16px;
+.welcome h4 {
+  font-size: 16px;
 }
-.title h3
-{
-    font-family: 'Benne', serif;
-    font-size: 28px;
-    font-weight: bold;
+.title h3 {
+  font-family: "Benne", serif;
+  font-size: 28px;
+  font-weight: bold;
 }
-.main_form
-{
-    /*width: 800px;
+.main_form {
+  /*width: 800px;
     height:420px;*/
-    border-radius: 15px;
-    border:solid #b2bec3 0.2px;
-    /*box-shadow: 1px 1px 4px gray;*/
-    background-color: white;
+  border-radius: 15px;
+  border: solid #b2bec3 0.2px;
+  /*box-shadow: 1px 1px 4px gray;*/
+  background-color: white;
 }
-#main_form
-{
-    margin: 10px 10px;
+#main_form {
+  margin: 10px 10px;
 }
-.form-group button
-{
-    background: #A0522D;
-    padding: 5px 30px;
-    color:#fff;
-    border: none;
-    border-radius: 10px;
-    outline: none;
+.form-group button {
+  background: #a0522d;
+  padding: 5px 30px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  outline: none;
 }
-.form-group button:hover
-{
-    border:solid #A0522D 0.2px;
-    background: #fff;
-    color: #A0522D;
-    transition: 0.75s;
+.form-group button:hover {
+  border: solid #a0522d 0.2px;
+  background: #fff;
+  color: #a0522d;
+  transition: 0.75s;
 }
-.button_Create button
-{
-    background: #A0522D;
-    padding: 5px 30px;
-    color:#fff;
-    border: none;
-    border-radius: 10px;
-    outline: none;
+.button_Create button {
+  background: #a0522d;
+  padding: 5px 30px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
-.button_Create button:hover
-{
-    border:solid #A0522D 0.2px;
-    background: #fff;
-    color: #A0522D;
-    transition: 0.75s;
+.button_Create button:hover {
+  border: solid #a0522d 0.2px;
+  background: #fff;
+  color: #a0522d;
+  transition: 0.75s;
 }
-.form-group textarea
-{
-    border:solid #b2bec3 0.2px;
-    padding: 10px;
-    width: 100%;
+.form-group textarea {
+  border: solid #b2bec3 0.2px;
+  padding: 10px;
+  width: 100%;
 }
