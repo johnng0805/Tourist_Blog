@@ -17,4 +17,14 @@ $(function() {
             }
         }
     });
+    $("#logoutA").on("click", function(event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/user/logout",
+            success: function(data) {
+                location.href = "Http://localhost:3000";
+            }
+        })
+    });
 });

@@ -148,7 +148,7 @@ router.get('/userInfo', checkLogin, async function(req, res) {
     }
 });
 
-router.get('/:id', checkLogin, async function(req, res) {
+router.get('/:id', async function(req, res) {
     const id = req.params.id;
     try {
         const userInfo = await UserModel.findOne({

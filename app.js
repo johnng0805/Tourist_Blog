@@ -38,7 +38,7 @@ app.get('/register', async function(req, res) {
     res.sendFile('./view/register.html', {root: __dirname});
 });
 
-app.get('/', checkLogin, async function(req, res) {
+app.get('/', async function(req, res) {
     res.sendFile('./view/index.html', {root: __dirname});
 });
 
@@ -52,6 +52,14 @@ app.get('/about_me', checkLogin, async function(req, res) {
 
 app.get('/my_photos', checkLogin, async function(req, res) {
     res.sendFile('./view/timeline-photos.html', {root: __dirname});
+});
+
+app.get('/personal_blog', checkLogin, async function(req, res) {
+    res.sendFile('./view/personal_blog.html', {root: __dirname});
+});
+
+app.get('/blog_detail', async function(req, res) {
+    res.sendFile('./view/blog_detail.html', {root: __dirname});
 });
 
 app.use('/user', UserController);

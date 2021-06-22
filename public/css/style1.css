@@ -760,15 +760,20 @@ header.sticky {
   display: block;
   position: relative;
   width: 100%;
+  height: 40vh;
 }
 
 .feature-photo > figure {
   margin-bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .feature-photo > figure img {
-  display: inline-block;
+  /*display: inline-block;*/
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .user-avatar {
@@ -1404,7 +1409,7 @@ form button {
 
 .description {
   float: left;
-  margin-top: 12px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
@@ -10004,4 +10009,23 @@ aside.sidebar.full-style {
   font-weight: bold;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: x-large;
+  padding: 0;
+}
+
+pre {
+  width: 100%;
+  height: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-size: medium;
+  font-style: normal;
 }

@@ -45,8 +45,7 @@ function checkFileType(file, cb) {
     }
 }  
 
-router.get('/', checkLogin, async function(req, res) {
-    console.log(req.session.User.userID);
+router.get('/', async function(req, res) {
     try {
         var Blog = await BlogModel.findAll();
         console.log(Blog);
@@ -151,6 +150,33 @@ router.delete('/:id', checkLogin, async function(req, res) {
         console.log(err);
         res.sendStatus(500);
     }
-})
+});
+
+router.post('/view_blog', (req, res) => {
+    try {
+        const blogID = req.body.id;
+        console.log(req.body);
+        req.session.blogID = blogID;
+        res.sendStatus(200);
+    } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+});
+
+router.get('/blog_detail', async function(req, res) {
+    try {
+        const blogID = req.session.blogID;
+        const blog = await BlogModel.findOne({
+            where: {
+                id: blogID
+            }
+        });
+        (blog) ? res.status(200).send(blog) : res.sendStatus(404);
+    } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+});
 
 module.exports = router;

@@ -42,12 +42,7 @@ $(function() {
                                                 </div>
                                                 <div class="post-meta">
                                                     <div class="description">
-                                                        <form name="postTitle">
-                                                            <input type="hidden" name="id" value="${id}">
-                                                            <button type="button" name="postTitleBtn" class="link-button">
-                                                                ${value.title}
-                                                            </button>
-                                                        </form>
+                                                        <p><a href="http://localhost:3000/blog/${id}">${value.title}</a></p>
                                                     </div>
                                                     <div class="post-image">
                                                         ${img}
@@ -65,29 +60,13 @@ $(function() {
             }
         }
     });
-    $(document.body).on("click", 'button[name="postTitleBtn"]', function(event) {
-        event.preventDefault();
-        const id = {
-            id: $(this).prev().val()
-        };
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:3000/blog/view_blog",
-            contentType: "application/json",
-            data: JSON.stringify(id),
-            encode: true,
-            success: function(data) {
-                location.href = "http://localhost:3000/blog_detail";
-            }
-        })
-    })
     $("#logoutA").on("click", function(event) {
         event.preventDefault();
         $.ajax({
             type: "POST",
             url: "http://localhost:3000/user/logout",
             success: function(data) {
-                location.reload();
+                location.href = "htpp://localhost:3000";
             }
         })
     })
