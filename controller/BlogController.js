@@ -110,20 +110,27 @@ router.post('/', checkLogin,
     }
 );
 
-router.put('/:id', checkLogin, 
-    body('title').notEmpty(),
-    body('content').notEmpty(),
+router.put('/:id', checkLogin, upload, 
+    //body('title').notEmpty(),
+    //body('content').notEmpty(),
     async function(req, res) {
-        const err = validationResult(req);
+        /*const err = validationResult(req);
         if (!err.isEmpty()) {
             return res.sendStatus(400);
-        }
-        const id = req.params.id;
-        const { title, content } = req.body;
+        }*/
         try {
+            const id = req.params.id;
+            const { title, content } = req.body;
+            var image;
+            if (req.file) {
+                image = req.file.filename;
+            } else {
+                image = null;
+            }
             const updateBlog = await BlogModel.update({
                 title: title,
-                content: content
+                content: content,
+                image: image
             }, {
                 where: {
                     id: id

@@ -9,7 +9,7 @@ $(function() {
             processData: false,
             contentType: false,
             success: function(data) {
-                alert('Posted');
+                location.href = "http://localhost:3000/personal_blog"
             },
             error: function(jqXHR, exception) {
                if (jqXHR.status === 500) {
