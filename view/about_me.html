@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+        <head>
+            <title>About me</title>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/static/css/main.min.css">
+            <link rel="stylesheet" href="/static/css/style1.css">
+            <link rel="stylesheet" href="/static/css/color.css">
+            <link rel="stylesheet" href="/static/css/responsive.css">
+            <link rel="stylesheet" href="/static/css/about_me.css">
+        </head>
+        <body>
+            <div class="page-container pb-3">
+                <div class="hero_image position-relative">
+                    <img src="/static/images/slider_1.jpg">
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 mt-5">
+                        <aside class="sidebar static">
+                            <div class="widget">
+                                <h4 class="widget-title">Shortcuts</h4>
+                                <ul class="naves">
+                                    <li>
+                                        <i class="ti-clipboard"></i>
+                                        <a href="http://localhost:3000" title="">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-clipboard"></i>
+                                        <a href="http://localhost:3000/about_me" title="">About me</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-mouse-alt"></i>
+                                        <a href="http://localhost:3000/personal_blog" title="">Your blogs</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-files"></i>
+                                        <a href="http://localhost:3000/createBlog" title="">Create blog</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-image"></i>
+                                        <a href="http://localhost:3000/my_photos" title="">Images</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-power-off"></i>
+                                        <a href="" title="" id="logoutA">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="info-box-container col-lg-5 row mx-auto px-3 pb-3 mt-5">
+                        <div class="d-flex justify-content-center">
+                            <div id="profilePhotoBorder" class="">
+                                <div id="profilePhoto">
+                                    <img src="/static/images/bg.jpg" id="image">
+                                </div>
+                            </div>
+                        </div>
+                        <h1 id="usernameTitle" class="text-center">Name Title</h1>
+                        <div class="info-box">
+                            <form class="form" id="userInfoForm" enctype="multipart/form-data" action="http://localhost:3000/user/userInfo">
+                                <div class="form-group row pb-1">
+                                    <label for="first_name" class="col-sm-4 col-form-label">First name:</label>
+                                    <div class="col">
+                                        <input type="text" id="first_name" class="form-control-plaintext px-1" placeholder="first name" name="first_name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row pb-1">
+                                    <label for="last_name" class="col-sm-4 col-form-label">Last name:</label>
+                                    <div class="col">
+                                        <input type="text" id="last_name" class="form-control-plaintext px-1" placeholder="last name" name="last_name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row pb-1">
+                                    <label for="email" class="col-sm-4 col-form-label">Email:</label>
+                                    <div class="col">
+                                        <input type="email" id="email" class="form-control-plaintext px-1" placeholder="email@mail.com" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row pb-1">
+                                    <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
+                                    <div class="col">
+                                        <input type="date" id="birthday" class="form-control-plaintext px-1" placeholder="dd/MM/yyyy" name="birthday" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row pb-1">
+                                    <label for="phone" class="col-sm-4 col-form-label">Phone:</label>
+                                    <div class="col">
+                                        <input type="tel" id="phone" class="form-control-plaintext px-1" placeholder="123456" name="phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row pb-1">
+                                    <label for="gender" class="col-sm-4 col-form-label">Gender:</label>
+                                    <div class="col">
+                                        <select class="form-control-plaintex h-100" id="gender" name="gender">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row pb-1">
+                                    <label for="image" class="col-sm-4 col-form-label">Profile photo:</label>
+                                    <div class="col">
+                                        <input type="file" id="image" class="form-control px-1 border-0" name="image">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="http://localhost:3000" id="backBtn" class="btn btn-primary">Back</a>
+                                    <button type="submit" id="updateBtn" class="btn btn-primary" name="updateBtn">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget">
+                                <div class="foot-logo">
+                                    <div class="logo">
+                                        <a href="index-2.html" title=""><img src="/static/images/logoblog.png" alt=""></a>
+                                    </div>	
+                                    <p>
+                                        Blog bé xinh cung cấp thông tin cho các bạn yêu du lịch
+                                    </p>
+                                </div>
+                                <ul class="location">
+                                    <li>
+                                        <i class="ti-map-alt"></i>
+                                        <p>ĐH Công Nghệ Thông tin</p>
+                                    </li>
+                                    <li>
+                                        <i class="ti-mobile"></i>
+                                        <p>123456789</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="widget">
+                                <div class="widget-title"><h4>follow</h4></div>
+                                <ul class="list-style">
+                                    <li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com" title="">facebook</a></li>
+                                    <li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
+                                    <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en" title="">instagram</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="widget">
+                                <div class="widget-title"><h4>Navigate</h4></div>
+                                <ul class="list-style">
+                                    <li><a href="about.html" title="">about us</a></li>
+                                    <li><a href="contact.html" title="">contact us</a></li>
+                                    <li><a href="terms.html" title="">terms & Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="widget">
+                                <div class="widget-title"><h4>useful links</h4></div>
+                                <ul class="list-style">
+                                    <li><a href="#" title="">leasing</a></li>
+                                    <li><a href="#" title="">submit route</a></li>
+                                    <li><a href="#" title="">how does it work?</a></li>
+                                    <li><a href="#" title="">agent listings</a></li>
+                                    <li><a href="#" title="">view All</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--jQuery js-->
+            <script src="/static/js/jquery.min.js"></script>
+            <!--About_me js-->
+            <script src="/static/js/about_me.js"></script>
+        </body>
+</html>

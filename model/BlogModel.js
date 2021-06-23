@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const db = require('./db');
 
-const Post = db.define('Blog', {
+const Blog = db.define('Blog', {
     id: {
         primaryKey: true,
         type: DataTypes.UUID,
@@ -25,9 +25,13 @@ const Post = db.define('Blog', {
     date: {
         type: DataTypes.DATE,
         defaultValue: Sequelize.NOW
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     tableName: 'blogs'
 })
 
-module.exports = Post;
+module.exports = Blog;

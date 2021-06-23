@@ -12,7 +12,11 @@ const User = db.define('User', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    name: {
+    first_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    last_name: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -20,9 +24,21 @@ const User = db.define('User', {
         type: DataTypes.ENUM('Male', 'Female', 'Other'),
         allowNull: false
     },
+    birthday: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     password: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     tableName: 'users'

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="/static/css/main.min.css">
+    <link href="/static/css/style1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="/static/css/color.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <link href="/static/css/create_Post.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="header">
+        <img src="/static/images/slider_1.jpg" alt="">
+    </div>
+    <div class="row">
+        <div class="col-lg-3 mt-5">
+            <aside class="sidebar static">
+                <div class="widget">
+                    <h4 class="widget-title">Shortcuts</h4>
+                    <ul class="naves">
+                        <li>
+                            <i class="ti-clipboard"></i>
+                            <a href="http://localhost:3000" title="">Home</a>
+                        </li>
+                        <li>
+                            <i class="ti-clipboard"></i>
+                            <a href="http://localhost:3000/about_me" title="">About me</a>
+                        </li>
+                        <li>
+                            <i class="ti-mouse-alt"></i>
+                            <a href="http://localhost:3000/personal_blog" title="">Your blogs</a>
+                        </li>
+                        <li>
+                            <i class="ti-files"></i>
+                            <a href="http://localhost:3000/createBlog" title="">Create blog</a>
+                        </li>
+                        <li>
+                            <i class="ti-image"></i>
+                            <a href="http://localhost:3000/my_photos" title="">Images</a>
+                        </li>
+                        <li>
+                            <i class="ti-power-off"></i>
+                            <a href="" title="" id="logoutA">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <div class="container col-lg-8 mb-4">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="Picture">
+                        <img src="/static/images/circle-cropped.png" alt="Ảnh đại diện">
+                    </div>
+                </div>
+                <div class="col-12 mt-2 welcome">
+                    <h4>Welcome Claura !</h4>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12 title">
+                    <h3>Create Post</h3>
+                </div>
+            </div>
+            <div class="main_form mt-2 p-3">
+                <form id="main_form" enctype="multipart/form-data" method="POST" action="http://localhost:3000/blog">
+                    <div class="form-group">
+                        <label style="font-size: 17px; font-weight: bold;">Image</label>
+                        <input type="file" name="blogImage" class="">
+                    </div>
+                    <div class="form-group">
+                      <label style="font-size: 17px; font-weight: bold;">Title:</label>
+                      <input style="outline: none;" type="text" name="title" id="title" class="form-control"  placeholder="Write here...." required> 
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 17px; font-weight: bold;">Content:</label> <br>
+                        <textarea name="content" id="blogContent" rows="10" placeholder="Write here...." required></textarea>
+                      </div>
+                    <div class="button_Create">
+                        <button type="submit">Post</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4">
+					<div class="widget">
+						<div class="foot-logo">
+							<div class="logo">
+								<a href="index-2.html" title=""><img src="/static/images/logoblog.png" alt=""></a>
+							</div>	
+							<p>
+								Blog bé xinh cung cấp thông tin cho các bạn yêu du lịch
+							</p>
+						</div>
+						<ul class="location">
+							<li>
+								<i class="ti-map-alt"></i>
+								<p>ĐH Công Nghệ Thông tin</p>
+							</li>
+							<li>
+								<i class="ti-mobile"></i>
+								<p>123456789</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="widget">
+						<div class="widget-title"><h4>follow</h4></div>
+						<ul class="list-style">
+							<li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com" title="">facebook</a></li>
+							<li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
+							<li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en" title="">instagram</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="widget">
+						<div class="widget-title"><h4>Navigate</h4></div>
+						<ul class="list-style">
+							<li><a href="about.html" title="">about us</a></li>
+							<li><a href="contact.html" title="">contact us</a></li>
+							<li><a href="terms.html" title="">terms & Conditions</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="widget">
+						<div class="widget-title"><h4>useful links</h4></div>
+						<ul class="list-style">
+							<li><a href="#" title="">leasing</a></li>
+							<li><a href="#" title="">submit route</a></li>
+							<li><a href="#" title="">how does it work?</a></li>
+							<li><a href="#" title="">agent listings</a></li>
+							<li><a href="#" title="">view All</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <!-- Main JS-->
+    <script></script>
+    <!--Create_Blog script-->
+    <script src="/static/js/create_blog.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
