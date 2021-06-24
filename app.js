@@ -38,7 +38,7 @@ app.get('/register', async function(req, res) {
     res.sendFile('./view/register.html', {root: __dirname});
 });
 
-app.get('/', async function(req, res) {
+app.get('/', checkLogin, async function(req, res) {
     res.sendFile('./view/index.html', {root: __dirname});
 });
 
