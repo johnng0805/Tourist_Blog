@@ -45,7 +45,7 @@ function checkFileType(file, cb) {
     }
 }  
 
-router.get('/', async function(req, res) {
+router.get('/', checkLogin, async function(req, res) {
     try {
         var Blog = await BlogModel.findAll();
         console.log(Blog);
@@ -171,7 +171,7 @@ router.post('/view_blog', (req, res) => {
     }
 });
 
-router.get('/blog_detail', async function(req, res) {
+router.get('/blog_detail', checkLogin, async function(req, res) {
     try {
         const blogID = req.session.blogID;
         const blog = await BlogModel.findOne({
