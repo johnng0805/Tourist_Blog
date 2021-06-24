@@ -55,30 +55,30 @@ $(document).ready(function () {
             $('#mailcheck').hide();
         }
     }
-    // Validate phone
-    $('#phonecheck').hide();
-    let phoneError = true;
-    $('#register-phone').keyup(function () {
-        validatePhone();
-    });
-    function validatePhone() {
-        let phoneValue = $('#register-phone').val();
-        if (phoneValue.length == '') {
-            $('#phonecheck').show();
-            phoneError = false;
-            return false;
-        }
-        if (phoneValue.length < 10) {
-            $('#phonecheck').show();
-            $('#phonecheck').html
-                ("*Invalid phone number!");
-            $('#phonecheck').css("color", "red");
-            phoneError = false;
-            return false;
-        } else {
-            $('#phonecheck').hide();
-        }
-    }
+//    // Validate phone
+//     $('#phonecheck').hide();
+//     let phoneError = true;
+//     $('#register-phone').keyup(function () {
+//         validatePhone();
+//     });
+//     function validatePhone() {
+//         let phoneValue = $('#register-phone').val();
+//         if (phoneValue.length == '') {
+//             $('#phonecheck').show();
+//             phoneError = false;
+//             return false;
+//         }
+//         if (phoneValue.length < 11) {
+//             $('#phonecheck').show();
+//             $('#phonecheck').html
+//                 ("*Invalid phone number!");
+//             $('#phonecheck').css("color", "red");
+//             phoneError = false;
+//             return false;
+//         } else {
+//             $('#phonecheck').hide();
+//         }
+//     }
     //validate password
     $('#passcheck').hide();
     let passError = true;
@@ -130,17 +130,16 @@ $(document).ready(function () {
     $('#register-submitBtn').click(function () {
         validateFirstname();
         validateLastname();
-        //validateEmail();
-        validatePhone();
+        //validatePhone();
         validateEmail();
         validatePassword();
         validateConfirmPasswrd();
         if (
             (firstnameError == true) &&
             (lastnameError == true) &&
-            (emailError == true) &&
+            //(emailError == true) &&
             (passError == true) &&
-            (phoneError == true) &&
+            //(phoneError == true) &&
             (confirmPasswordError == true) &&
             (mailError == true)
         ) {
