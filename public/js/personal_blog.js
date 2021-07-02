@@ -2,7 +2,7 @@ $(function() {
     var userProfile;
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/blog",
+        url: "http://localhost:3000/blog/personalBlog",
         success: function(data) {
             if (data) {
                 $.each(data, function(key, value) {;
